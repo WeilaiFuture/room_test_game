@@ -1,0 +1,20 @@
+"AddonInfo"
+{
+	"maps"			"lobby wait room"
+	"IsPlayable"		"1"
+
+	"lobby"
+	{
+		"MaxPlayers"	"10"
+	}
+
+	"wait"
+	{
+		"MaxPlayers"	"10"
+	}
+
+	"room"
+	{
+		"MaxPlayers"	"10"
+	}
+}

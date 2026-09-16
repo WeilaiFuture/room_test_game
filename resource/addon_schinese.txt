@@ -1,0 +1,11 @@
+"lang"
+{
+	"Language"		"Schinese"
+	"Tokens"
+	{
+		"addon_game_name"			"对战平台"
+		"lobby"					"启动器"
+		"wait"					"大厅"
+		"room"					"房间"
+	}
+}

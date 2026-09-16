@@ -1,0 +1,7 @@
+tools_thumbnail_cache.sqlite3
+tools_thumbnail_cache.sqlite3-shm
+tools_thumbnail_cache.sqlite3-wal
+tools_asset_info.bin
+room_test_game/
+*.log
+.DS_Store
