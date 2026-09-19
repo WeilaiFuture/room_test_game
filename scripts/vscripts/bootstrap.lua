@@ -21,6 +21,21 @@ local function parse_address(text)
     return tostring(host or ""), tonumber(port) or 0
 end
 
+local function load_target()
+    local host = tostring(Config.loadHost or "")
+    if host == "" then
+        host = select(1, parse_address(Config.loadAddress))
+    end
+    if host == "" then
+        host = "43.142.151.86"
+    end
+    local port = tonumber(Config.loadPort) or 27099
+    if port ~= 27099 then
+        port = 27099
+    end
+    return host, port, host .. ":" .. tostring(port)
+end
+
 local function in_setup()
     local setup = rawget(_G, "DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP")
     local state = GameRules and GameRules.State_Get and GameRules:State_Get() or nil
@@ -51,13 +66,13 @@ function HallBootstrap:_SendEntry(pid)
         return
     end
     self._entryAt[pid] = now + 3
-    local host, port = parse_address(Config.loadAddress)
+    local host, port, address = load_target()
     local event = {
         player_id = pid,
         host = host,
         port = port,
-        address = tostring(Config.loadAddress or ""),
-        password = tostring(Config.loadPassword or ""),
+        address = address,
+        password = "",
         enabled = 1,
         status = "wait_jump",
         mode = "entry",
@@ -95,13 +110,13 @@ function HallBootstrap:_SendEntryAll()
 end
 
 function HallBootstrap:_PublishEntry()
-    local host, port = parse_address(Config.loadAddress)
+    local host, port, address = load_target()
     local event = {
         mode = "entry",
         status = "wait_jump",
         enabled = 1,
-        address = tostring(Config.loadAddress or ""),
-        password = tostring(Config.loadPassword or ""),
+        address = address,
+        password = "",
         host = host,
         port = port,
     }

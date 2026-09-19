@@ -100,17 +100,17 @@ local function entry()
     if local_pid() < 0 then
         return
     end
-    local addr = tostring(Config.loadAddress or "")
-    if addr == "" then
-        return
+    local host = tostring(Config.loadHost or "")
+    if host == "" then
+        host = tostring(Config.loadAddress or ""):match("^([^:]+)") or "43.142.151.86"
     end
-    local host, port = addr:match("^(.+):(%d+)$")
+    local addr = host .. ":27099"
     connect({
         player_id = local_pid(),
         host = host,
-        port = tonumber(port),
+        port = 27099,
         address = addr,
-        password = tostring(Config.loadPassword or ""),
+        password = "",
         enabled = 1,
         status = "wait_jump",
     })

@@ -1,9 +1,11 @@
--- enter 写死连 load。创唯一 load 后由 Server 改 loadAddress。
+-- enter 只连这个 load。端口写死 27099，不要改成 27000。
 return {
     entryMap = "enter",
     loadMap = "load",
     waitMap = "wait",
-    loadAddress = "43.142.151.86:27000",
+    loadHost = "43.142.151.86",
+    loadPort = 27099,
+    loadAddress = "43.142.151.86:27099",
     loadPassword = "",
     controlUrl = "http://43.142.151.86:8088",
     token = "waitctl",
