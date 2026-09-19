@@ -1,0 +1,6 @@
+<root>
+	<Panel>
+		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/hall/Hall.xml" />
+		<CustomUIElement type="GameSetup" layoutfile="file://{resources}/layout/custom_game/hall/Hall.xml" />
+	</Panel>
+</root>

@@ -1,0 +1,18 @@
+<root>
+	<styles>
+		<include src="file://{resources}/layout/custom_game/hall/Hall.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/layout/custom_game/hall/Hall.js" />
+	</scripts>
+	<Panel class="HallRoot" hittest="false">
+		<Panel id="HallPanel" class="HallPanel HallHidden" hittest="true">
+			<Label id="HallTitle" class="HallTitle" text="大厅" />
+			<Label id="HallHint" class="HallHint" text="选择一张图进入游戏" />
+			<Panel id="HallMaps" class="HallMaps" />
+			<Button id="HallRefresh" class="HallRefresh" onactivate="HallRefreshMaps()">
+				<Label text="刷新地图" />
+			</Button>
+		</Panel>
+	</Panel>
+</root>

@@ -1,0 +1,37 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	HideInTools = false
+	IsPlayable = true
+	IsTemplate = false
+	maps =
+	[
+		"enter",
+		"load",
+		"wait",
+	]
+	CheckAFKPlayers = false
+	DefaultMap = "enter"
+	DisableIK = false
+	EnablePickRules = false
+	EventGame = false
+	MinimalPrecache = true
+	MinPlayers = 1
+	MaxPlayers = 60
+	map_options =
+	[
+		{
+			map = "enter"
+			MaxPlayers = 60
+		},
+		{
+			map = "load"
+			MaxPlayers = 60
+		},
+		{
+			map = "wait"
+			MaxPlayers = 60
+		},
+	]
+	PenaltiesEnabled = false
+	TeamCount = 1
+}
